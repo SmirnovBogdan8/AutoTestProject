@@ -1,7 +1,7 @@
 package ui.service;
 
 import com.codeborne.selenide.Condition;
-import org.ui.storage.ButtonStorage;
+import ui.storage.ButtonStorage;
 
 public class ButtonServiceImpl implements ButtonService {
     private final ButtonStorage buttonStorage;

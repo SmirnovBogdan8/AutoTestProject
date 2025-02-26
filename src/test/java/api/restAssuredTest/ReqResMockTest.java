@@ -9,6 +9,7 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.*;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Feature("API тестирование")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -29,7 +30,7 @@ public class ReqResMockTest {
         Response response =  given()
                 .when()
                 .get(URL + endPoint);
-        assertEquals(response.getStatusCode(), 200);
+        assertEquals(200, response.getStatusCode());
     }
 
     @Test
@@ -40,7 +41,7 @@ public class ReqResMockTest {
         Response response =  given()
                 .when()
                 .get(URL + endPoint);
-        assertEquals(response.getStatusCode(), 200);
+        assertEquals(200, response.getStatusCode());
     }
 
     @Test
@@ -51,7 +52,7 @@ public class ReqResMockTest {
         Response response =  given()
                 .when()
                 .get(URL + endPoint);
-        assertEquals(response.getStatusCode(), 404);
+        assertEquals(404, response.getStatusCode());
     }
 
     @Test
@@ -62,7 +63,7 @@ public class ReqResMockTest {
         Response response =  given()
                 .when()
                 .get(URL + endPoint);
-        assertEquals(response.getStatusCode(), 200);
+        assertEquals(200, response.getStatusCode());
     }
 
     @Test
@@ -73,7 +74,7 @@ public class ReqResMockTest {
         Response response =  given()
                 .when()
                 .get(URL + endPoint);
-        assertEquals(response.getStatusCode(), 200);
+        assertEquals(200, response.getStatusCode());
     }
 
     @Test
@@ -84,7 +85,7 @@ public class ReqResMockTest {
         Response response =  given()
                 .when()
                 .get(URL + endPoint);
-        assertEquals(response.getStatusCode(), 404);
+        assertEquals(404, response.getStatusCode());
     }
 
     @Test
@@ -233,6 +234,6 @@ public class ReqResMockTest {
         Response response =  given()
                 .when()
                 .get(URL + endPoint);
-        assertEquals(response.getStatusCode(), 200);
+        assertEquals(200, response.getStatusCode());
     }
 }

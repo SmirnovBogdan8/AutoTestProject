@@ -3,9 +3,9 @@ package ui.steps;
 import io.cucumber.java.ru.Когда;
 import io.cucumber.java.ru.Тогда;
 import org.junit.Assert;
-import org.ui.service.ButtonService;
-import org.ui.service.ButtonServiceImpl;
-import org.ui.storage.MainPageStorage;
+import ui.service.ButtonService;
+import ui.service.ButtonServiceImpl;
+import ui.storage.MainPageStorage;
 
 public class MainPageSteps {
     private final MainPageStorage mainPageStorage;
