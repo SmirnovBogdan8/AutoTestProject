@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'io.qameta.allure' version '2.11.2'
 }
 
 group = 'org.example'
@@ -51,4 +52,5 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    systemProperty 'allure.results.directory', 'build/allure-results'
 }
