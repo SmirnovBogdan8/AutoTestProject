@@ -1,4 +1,3 @@
 package elibrary.locators;
 
-public class RegistrationLocators {
-}
+public class RegistrationLocators {}

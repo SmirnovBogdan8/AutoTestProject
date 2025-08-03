@@ -6,7 +6,6 @@ import elibrary.utils.NetworkUtils;
 import static com.codeborne.selenide.Selenide.$;
 
 public class AuthorizationLocators {
-    // Локаторы элементов страницы
     public static final SelenideElement TXT_LOGIN = $("//input[@id='login']");
     public static final SelenideElement TXT_PASSWORD = $("//input[@id='password']");
     public static final SelenideElement ICON_VISIBLE_PWD = $("//a[@href='#' and @class='password-control']");
