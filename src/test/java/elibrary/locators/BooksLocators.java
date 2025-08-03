@@ -17,10 +17,10 @@ public class BooksLocators {
     public static final SelenideElement SELECT_SHOW_OPTION = $("//select[@class='input' and @id='show_option']");
     public static final SelenideElement SELECT_SORT_ORDER = $("//select[@class='input' and @id='sortorder']");
     public static final SelenideElement SELECT_ORDER = $("//select[@class='input' and @id='order']");
-    public static final SelenideElement BTN_SELECT_ALL = $("//a[text()='Выделить все книги на этой странице']");
-    public static final SelenideElement BTN_SELECT_REMOVE = $("//a[text()='Снять выделение']");
-    public static final SelenideElement BTN_BOOKS_ADD = $("//a[text()='Добавить выделенные книги в подборку:']");
-    public static final SelenideElement BTN_BOOKS_ADD_ALL = $("//a[text()='Добавить все книги в указанную выше подборку']");
+    public static final SelenideElement LINK_SELECT_ALL = $("//a[text()='Выделить все книги на этой странице']");
+    public static final SelenideElement LINK_SELECT_REMOVE = $("//a[text()='Снять выделение']");
+    public static final SelenideElement LINK_BOOKS_ADD = $("//a[text()='Добавить выделенные книги в подборку:']");
+    public static final SelenideElement LINK_BOOKS_ADD_ALL = $("//a[text()='Добавить все книги в указанную выше подборку']");
     public static final SelenideElement BTN_RESET_FROM = $("//div[@class='butblue' and text()='Очистить']");
     public static final SelenideElement BTN_SEARCH = $("//div[@class='butred' and text()='Поиск']");
 }
