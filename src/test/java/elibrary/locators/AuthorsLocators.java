@@ -5,7 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$;
 
 public class AuthorsLocators {
-    public static final SelenideElement TXT_LOGIN = $("//input[@id='surname']");
+    public static final SelenideElement TXT_SURNAME = $("//input[@id='surname']");
     public static final SelenideElement SELECT_CODE_TYPE = $("//select[@id='codetype']");
     public static final SelenideElement TXT_CODE_VALUE = $("//input[@id='codevalue']");
     public static final SelenideElement SELECT_TOWN = $("//select[@name='town' and @class='input']");
