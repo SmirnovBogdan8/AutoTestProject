@@ -18,3 +18,41 @@
 | **Таблица**              | `TABLE_{NAME}`          | `TABLE_ORDER_HISTORY`      | HTML-таблица (`<table>`)                    |
 | **Модальное окно**       | `MODAL_{NAME}`          | `MODAL_CONFIRMATION`       | Попап/диалоговое окно                       |
 | **Список веб-элементов** | `LIST_{ELEMENT}_{NAME}` | `LIST_BTN_FILTER`          | Объект ElementsCollection                   |
+
+### **📌 Стиль проектирования locators, page и test**
+### 1. Locators
+Классы содержат локаторы элементов:
+```java
+public class LoginLocators {
+    public static final SelenideElement USERNAME = $("#username");
+    public static final SelenideElement PASSWORD = $("#password");
+}
+```
+
+### 2. Page Objects
+Инкапсулируют взаимодействие со страницами:
+```java
+public class LoginPage {
+    public LoginPage enterCredentials(String user, String pass) {
+        LoginLocators.USERNAME.setValue(user);
+        LoginLocators.PASSWORD.setValue(pass);
+        return this;
+    }
+}
+```
+
+### 3. Тесты
+Пример тестового класса:
+```java
+class LoginTest {
+    @Test
+    void shouldLoginSuccessfully() {
+        new LoginPage()
+            .open()
+            .enterCredentials("admin", "pass123")
+            .submit();
+        
+        assertEquals("/dashboard", WebDriverRunner.url());
+    }
+}
+```
