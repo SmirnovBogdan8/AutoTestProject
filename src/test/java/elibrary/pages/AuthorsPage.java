@@ -35,12 +35,14 @@ public class AuthorsPage extends BasePage {
         return this;
     }
 
-    /*@Step("Выбрать организацию")
+    @Step("Выбрать организацию")
     public AuthorsPage selectOrganization(String organization, String city){
         clickButton(AuthorsLocators.BTN_SELECT_ORGANIZATION);
-
+        inputText(AuthorsLocators.MODAL_ORGANIZATION, organization);
+        selectItem(AuthorsLocators.MODAL_SELECT_TOWN, city);
+        clickButton(AuthorsLocators.MODAL_BTN_SEARCH);
         return this;
-    }*/
+    }
 
     @Step("Выбрать группу авторов")
     public AuthorsPage selectGroupAuthor(String groupAuthor){
