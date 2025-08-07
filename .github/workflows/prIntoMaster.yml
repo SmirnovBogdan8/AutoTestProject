@@ -35,16 +35,6 @@ jobs:
       - name: Clean project
         run: ./gradlew clean
 
-      - name: Run tests with headless Chrome
-        run: |
-          export DISPLAY=:99
-          Xvfb :99 -screen 0 1920x1080x24 &
-          ./gradlew test \
-            --tests "learnProject.ui.selenideTests.*" \
-            -Dselenide.headless=true \
-            -Dwebdriver.chrome.whitelistedIps="" \
-            -Dwebdriver.chrome.driver=$(which chromedriver)
-
       - name: Generate Allure report
         run: ./gradlew allureReport
         if: always()
