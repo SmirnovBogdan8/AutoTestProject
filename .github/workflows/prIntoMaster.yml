@@ -30,14 +30,14 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4.0.0
 
+      - name: Build project
+        run: ./gradlew build
+
       - name: Clean project
         run: ./gradlew clean
 
       - name: Run tests
         run: ./gradlew test
-
-      - name: Build project
-        run: ./gradlew build
 
       - name: Generate Allure report
         run: ./gradlew allureReport
