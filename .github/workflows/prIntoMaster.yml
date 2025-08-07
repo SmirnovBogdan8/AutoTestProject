@@ -46,14 +46,7 @@ jobs:
         run: ./gradlew clean
 
       - name: Run tests with headless Chrome
-        run: |
-          export DISPLAY=:99
-          Xvfb :99 -screen 0 1920x1080x24 &
-          ./gradlew test \
-            --tests "learnProject.ui.selenideTests.*" \
-            -Dselenide.headless=true \
-            -Dwebdriver.chrome.whitelistedIps="" \
-            -Dwebdriver.chrome.driver=$(which chromedriver)
+        run: ./gradlew test --tests learnProject.ui.selenideTests.*
 
       - name: Generate Allure report
         run: ./gradlew allureReport
@@ -65,17 +58,3 @@ jobs:
         with:
           name: allure-report
           path: build/reports/allure-report/
-
-  dependency-submission:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-      - name: Generate and submit dependency graph
-        uses: gradle/actions/dependency-submission@v4.0.0
