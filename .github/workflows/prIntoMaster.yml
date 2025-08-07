@@ -40,7 +40,7 @@ jobs:
         run: ./gradlew clean
 
       - name: Run tests
-        run: ./gradlew test --tests "tests.pc.*"
+        run: ./gradlew test --tests "learnProject.ui.selenideTests.*"
 
       - name: Generate Allure report
         run: ./gradlew allureReport
