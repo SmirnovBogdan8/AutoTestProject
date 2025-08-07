@@ -29,18 +29,38 @@ jobs:
           chrome-version: 'latest'
           check-latest: true
 
+      - name: Cache Gradle dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4.0.0
 
       - name: Clean project
         run: ./gradlew clean
 
+      - name: Run tests with headless Chrome
+        run: |
+          export DISPLAY=:99
+          Xvfb :99 -screen 0 1920x1080x24 &
+          ./gradlew test \
+            --tests "learnProject.ui.selenideTests.*" \
+            -Dselenide.headless=true \
+            -Dwebdriver.chrome.whitelistedIps="" \
+            -Dwebdriver.chrome.driver=$(which chromedriver)
+
       - name: Generate Allure report
         run: ./gradlew allureReport
         if: always()
 
       - name: Upload Allure report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: allure-report
